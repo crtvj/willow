@@ -159,10 +159,7 @@ document.getElementById("continueBtn3").addEventListener("click", function(){
 
 // YES button triggers final promise page
 function yesClicked(){
-  // hide page 4
-  document.getElementById("page4").style.display="none";
-
-  // show page 5
+  document.getElementById("page4").style.display = "none";
   const page5 = document.getElementById("page5");
   page5.innerHTML = `
     <h1 style="font-size:48px; margin:20px; max-width:500px; text-align:center;">
@@ -171,12 +168,11 @@ function yesClicked(){
     </h1>
     <button onclick="alert('Promise kept ❤️💍')">PROMISE 💍</button>
   `;
-  page5.style.display="flex";
-  page5.style.flexDirection="column";
-  page5.style.justifyContent="center";
-  page5.style.alignItems="center";
-  page5.style.height="100vh";
-
+  page5.style.display = "flex";
+  page5.style.flexDirection = "column";
+  page5.style.justifyContent = "center";
+  page5.style.alignItems = "center";
+  page5.style.height = "100vh";
   startConfetti();
 }
 
