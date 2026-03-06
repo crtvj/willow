@@ -5,104 +5,77 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 body{
-margin:0;
-overflow:hidden;
-background:#ffb6c1;
-font-family:'Poppins', sans-serif;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-height:100vh;
-text-align:center;
-color:black;
+  margin:0;
+  overflow:hidden;
+  background:#ffb6c1;
+  font-family:'Poppins', sans-serif;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  text-align:center;
+  color:black;
 }
 
 /* Titles */
-.title, .message, .diary h1{
-font-size:60px;
-font-weight:700;
-letter-spacing:3px;
-margin:20px;
+.title, .message{
+  font-size:60px;
+  font-weight:700;
+  letter-spacing:3px;
+  margin:20px;
 }
 
 /* Subtext */
 .subtext{
-font-size:24px;
-margin:15px;
+  font-size:24px;
+  margin:15px;
 }
 
 /* Buttons */
 button{
-padding:15px 35px;
-font-size:20px;
-background:black;
-color:white;
-border:none;
-border-radius:12px;
-cursor:pointer;
-margin-top:20px;
-font-family:'Poppins', sans-serif;
-position:relative;
+  padding:15px 35px;
+  font-size:20px;
+  background:black;
+  color:white;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  margin-top:20px;
+  font-family:'Poppins', sans-serif;
+  position:relative;
 }
 
 /* Floating hearts */
 .heart{
-position:absolute;
-color:black;
-pointer-events:none;
-animation:float linear infinite;
+  position:absolute;
+  color:black;
+  pointer-events:none;
+  animation:float linear infinite;
 }
 
 @keyframes float{
-0%{ transform:translateY(120vh); opacity:1; }
-100%{ transform:translateY(-30vh); opacity:0; }
+  0%{ transform:translateY(120vh); opacity:1; }
+  100%{ transform:translateY(-30vh); opacity:0; }
 }
 
 /* Fade-in text */
 .fadeIn{
-opacity:0;
-animation:fadeIn 2s forwards;
+  opacity:0;
+  animation:fadeIn 2s forwards;
 }
 
 @keyframes fadeIn{
-to{ opacity:1; }
-}
-
-/* Diary Cover */
-.diary{
-width:300px;
-height:400px;
-background:white;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-margin-bottom:30px;
-}
-
-/* Diary cover text */
-.diary h1{
-font-size:24px;
-font-weight:700;
-margin-bottom:10px;
-}
-.diary p{
-font-size:18px;
-margin:5px 0;
+  to{ opacity:1; }
 }
 
 /* Love message text */
 .loveText{
-font-size:22px;
-line-height:1.6;
-opacity:0;
-max-width:500px;
-animation:fadeIn 2s forwards;
+  font-size:22px;
+  line-height:1.6;
+  opacity:0;
+  max-width:500px;
+  animation:fadeIn 2s forwards;
 }
 </style>
 </head>
@@ -110,48 +83,49 @@ animation:fadeIn 2s forwards;
 
 <!-- Page 1 -->
 <div id="page1">
-<h1 class="title fadeIn">FOR SHYLH</h1>
-<button id="continueBtn1">Continue</button>
+  <h1 class="title fadeIn">FOR SHYLAH</h1>
+  <button id="continueBtn1">Continue</button>
 </div>
 
 <!-- Page 2 -->
 <div id="page2" style="display:none; flex-direction:column; justify-content:center; align-items:center;">
-<h1 class="message fadeIn">Hi Shylah ❤️</h1>
-<p class="subtext fadeIn">This website is made just for you.<br>
-With all my heart, <br><strong>J DADDY</strong></p>
-<button id="continueBtn2">Continue</button>
-<audio id="loveSong" src="love_song.mp3"></audio>
+  <h1 class="message fadeIn">Hi Shylah ❤️</h1>
+  <p class="subtext fadeIn">This website is made just for you.<br>
+  With all my heart, <br><strong>J DADDY</strong></p>
+  <button id="continueBtn2">Continue</button>
+  <audio id="loveSong" src="love_song.mp3"></audio>
 </div>
 
 <!-- Page 3 -->
 <div id="page3" style="display:none; flex-direction:column; justify-content:center; align-items:center;">
-<div id="diaryPage" class="diary">
-<h1>My Secret Diary</h1>
-<p>Belongs to J DADDY</p>
-<button onclick="openDiary()">Open the Diary</button>
+  <p class="loveText">
+    I knew I loved you but I just couldn't prove it 😳💖.<br>
+    For the few months I've known you, I knew that my heart had chosen such a beautiful and pretty girl 💕.<br>
+    I'd love to have this with you because I LOVE YOU 🥰.<br>
+    And I'm kinda curious on this page because I'm blushing as I write this to you 😅, sitting at my laptop and my family thinks I'm crazy 'cause I'm constantly smiling and blushing as I write this to you 😊.
+  </p>
+  <button id="continueBtn3">Continue</button>
 </div>
-<div id="lovePage" style="display:none;">
-<p class="loveText">
-I knew I loved you but I just couldn't prove it 😳💖.<br>
-For the few months I've known you, I knew that my heart had chosen such a beautiful and pretty girl 💕.<br>
-I'd love to have this with you because I LOVE YOU 🥰.<br>
-And I'm kinda curious on this page because I'm blushing as I write this to you 😅, sitting at my laptop and my family thinks I'm crazy 'cause I'm constantly smiling and blushing as I write this to you 😊.
-</p>
-<button onclick="seeMore()">Care to see more?</button>
-</div>
+
+<!-- Page 4 -->
+<div id="page4" style="display:none; flex-direction:column; justify-content:center; align-items:center;">
+  <h1 style="font-size:60px; font-weight:700; margin:20px;">Will you be the reason I smile every day? 😊</h1>
+  <p style="font-size:32px; margin:5px;">My girlfriend 💖</p>
+  <button id="yesBtn" onclick="yesClicked()">YES 😍</button>
+  <button id="noBtn" onclick="moveNo(this)">NO 😅</button>
 </div>
 
 <script>
 // Floating hearts
 function createHeart(){
-const heart = document.createElement("div");
-heart.classList.add("heart");
-heart.innerHTML = "❤";
-heart.style.left = Math.random()*100 + "vw";
-heart.style.fontSize = (Math.random()*30+15) + "px";
-heart.style.animationDuration = (Math.random()*2+2) + "s";
-document.body.appendChild(heart);
-setTimeout(()=>{heart.remove();},4000);
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = (Math.random()*30+15) + "px";
+  heart.style.animationDuration = (Math.random()*2+2) + "s";
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove();},4000);
 }
 setInterval(createHeart,100);
 
@@ -174,16 +148,50 @@ document.getElementById("continueBtn2").addEventListener("click", function(){
   document.getElementById("page3").style.display="flex";
 });
 
-// Open Diary -> Love message
-function openDiary(){
-document.getElementById("diaryPage").style.display="none";
-document.getElementById("lovePage").style.display="flex";
+// Page 3 -> Page 4
+document.getElementById("continueBtn3").addEventListener("click", function(){
+  document.getElementById("page3").style.display="none";
+  document.getElementById("page4").style.display="flex";
+});
+
+// YES button triggers confetti/celebration
+function yesClicked(){
+  document.getElementById("page4").innerHTML = "<h1 style='font-size:60px;'>You just made me the happiest guy ❤️</h1>";
+  startConfetti();
 }
 
-// Placeholder for next surprise
-function seeMore(){
-alert("You can add the next surprise here!");
+// NO button moves away
+function moveNo(btn){
+  btn.style.position="absolute";
+  btn.style.top=Math.random()*80+"%";
+  btn.style.left=Math.random()*80+"%";
 }
+
+// Confetti animation
+function startConfetti(){
+  for(let i=0;i<100;i++){
+    const conf = document.createElement("div");
+    conf.style.width="10px";
+    conf.style.height="10px";
+    conf.style.background = ['#ff4444','#ffdd00','#44ff44','#44ddff'][Math.floor(Math.random()*4)];
+    conf.style.position="fixed";
+    conf.style.top="0";
+    conf.style.left = Math.random()*100 + "vw";
+    conf.style.pointerEvents="none";
+    conf.style.animation = "fall " + (Math.random()*2+2) + "s linear forwards";
+    document.body.appendChild(conf);
+    setTimeout(()=>conf.remove(),3000);
+  }
+}
+
+// Confetti falling keyframes
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes fall{
+0%{transform:translateY(0) rotate(0deg);}
+100%{transform:translateY(100vh) rotate(360deg);}
+}`;
+document.head.appendChild(style);
 </script>
 </body>
 </html>
