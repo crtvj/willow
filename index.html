@@ -119,8 +119,8 @@ animation:fadeIn 2s forwards;
 <h1 class="message fadeIn">Hi Shylah ❤️</h1>
 <p class="subtext fadeIn">This website is made just for you.<br>
 With all my heart, <br><strong>J DADDY</strong></p>
-<audio id="loveSong" src="love_song.mp3"></audio>
 <button id="continueBtn2">Continue</button>
+<audio id="loveSong" src="love_song.mp3"></audio>
 </div>
 
 <!-- Page 3 -->
@@ -158,7 +158,11 @@ setInterval(createHeart,100);
 // Page 1 -> Page 2
 document.getElementById("continueBtn1").addEventListener("click", function(){
   document.getElementById("page1").style.display="none";
-  document.getElementById("page2").style.display="flex";
+  const page2 = document.getElementById("page2");
+  page2.style.display="flex";
+  page2.style.flexDirection="column";
+  page2.style.alignItems="center";
+  page2.style.justifyContent="center";
 
   const audio = document.getElementById("loveSong");
   audio.play().catch(()=>console.log("Autoplay blocked"));
