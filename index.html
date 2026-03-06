@@ -44,6 +44,7 @@ button{
   margin-top:20px;
   font-family:'Poppins', sans-serif;
   position:relative;
+  z-index:10;
 }
 
 /* Floating hearts */
@@ -52,6 +53,7 @@ button{
   color:black;
   pointer-events:none;
   animation:float linear infinite;
+  z-index:1;
 }
 
 @keyframes float{
@@ -83,7 +85,7 @@ button{
 
 <!-- Page 1 -->
 <div id="page1">
-  <h1 class="title fadeIn">FOR SHYLAH</h1>
+  <h1 class="title fadeIn">FOR SHYLH</h1>
   <button id="continueBtn1">Continue</button>
 </div>
 
@@ -97,20 +99,20 @@ button{
 </div>
 
 <!-- Page 3 -->
-<div id="page3" style="display:none; flex-direction:column; justify-content:center; align-items:center;">
+<div id="page3" style="display:none; flex-direction:column; justify-content:center; align-items:center; height:100vh;">
   <!-- Envelope -->
-  <div id="envelope" style="font-size:80px; cursor:pointer;">✉️</div>
-  <button id="openBtn" style="margin-top:20px; font-size:24px;">OPEN</button>
+  <div id="envelope" style="font-size:80px; cursor:pointer; z-index:10;">✉️</div>
+  <button id="openBtn" style="margin-top:20px; font-size:24px; z-index:10;">OPEN</button>
   
   <!-- Love message hidden initially -->
-  <p id="loveLetter" class="loveText" style="display:none; margin-top:20px;">
+  <p id="loveLetter" class="loveText" style="display:none; margin-top:20px; z-index:10;">
     I knew I loved you but I just couldn't prove it 😳💖.<br>
     For the few months I've known you, I knew that my heart had chosen such a beautiful and pretty girl 💕.<br>
     I'd love to have this with you because I LOVE YOU 🥰.<br>
     And I'm kinda curious on this page because I'm blushing as I write this to you 😅, sitting at my laptop and my family thinks I'm crazy 'cause I'm constantly smiling and blushing as I write this to you 😊.
   </p>
   
-  <button id="continueBtn3" style="display:none; margin-top:20px;">Continue</button>
+  <button id="continueBtn3" style="display:none; margin-top:20px; z-index:10;">Continue</button>
 </div>
 
 <!-- Page 4 -->
