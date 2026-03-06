@@ -116,7 +116,7 @@ button{
 </div>
 
 <!-- Page 5 (Final Promise) -->
-<div id="page5" style="display:none; flex-direction:column; justify-content:center; align-items:center;"></div>
+<div id="page5" style="display:none; flex-direction:column; justify-content:center; align-items:center; height:100vh;"></div>
 
 <script>
 // Floating hearts
@@ -159,10 +159,13 @@ document.getElementById("continueBtn3").addEventListener("click", function(){
 
 // YES button triggers final promise page
 function yesClicked(){
+  // hide page 4
   document.getElementById("page4").style.display="none";
+
+  // show page 5
   const page5 = document.getElementById("page5");
   page5.innerHTML = `
-    <h1 style="font-size:48px; margin:20px; max-width:500px;">
+    <h1 style="font-size:48px; margin:20px; max-width:500px; text-align:center;">
       I promise to be loyal, no heartbreaks,<br>
       be supportive, be loving, and always be there for you 💖
     </h1>
@@ -170,8 +173,10 @@ function yesClicked(){
   `;
   page5.style.display="flex";
   page5.style.flexDirection="column";
-  page5.style.alignItems="center";
   page5.style.justifyContent="center";
+  page5.style.alignItems="center";
+  page5.style.height="100vh";
+
   startConfetti();
 }
 
