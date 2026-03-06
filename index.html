@@ -98,13 +98,19 @@ button{
 
 <!-- Page 3 -->
 <div id="page3" style="display:none; flex-direction:column; justify-content:center; align-items:center;">
-  <p class="loveText">
+  <!-- Envelope -->
+  <div id="envelope" style="font-size:80px; cursor:pointer;">✉️</div>
+  <button id="openBtn" style="margin-top:20px; font-size:24px;">OPEN</button>
+  
+  <!-- Love message hidden initially -->
+  <p id="loveLetter" class="loveText" style="display:none; margin-top:20px;">
     I knew I loved you but I just couldn't prove it 😳💖.<br>
     For the few months I've known you, I knew that my heart had chosen such a beautiful and pretty girl 💕.<br>
     I'd love to have this with you because I LOVE YOU 🥰.<br>
     And I'm kinda curious on this page because I'm blushing as I write this to you 😅, sitting at my laptop and my family thinks I'm crazy 'cause I'm constantly smiling and blushing as I write this to you 😊.
   </p>
-  <button id="continueBtn3">Continue</button>
+  
+  <button id="continueBtn3" style="display:none; margin-top:20px;">Continue</button>
 </div>
 
 <!-- Page 4 -->
@@ -149,6 +155,14 @@ document.getElementById("continueBtn1").addEventListener("click", function(){
 document.getElementById("continueBtn2").addEventListener("click", function(){
   document.getElementById("page2").style.display="none";
   document.getElementById("page3").style.display="flex";
+});
+
+// Envelope OPEN button functionality
+document.getElementById("openBtn").addEventListener("click", function(){
+  document.getElementById("envelope").style.display = "none";
+  document.getElementById("openBtn").style.display = "none";
+  document.getElementById("loveLetter").style.display = "block";
+  document.getElementById("continueBtn3").style.display = "block";
 });
 
 // Page 3 -> Page 4
