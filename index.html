@@ -2,8 +2,6 @@
 <html>
 <head>
 <title>For Shylah</title>
-
-<!-- Spotify-style font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -11,6 +9,7 @@ body{
 margin:0;
 overflow:hidden;
 background:#ffb6c1;
+font-family:'Poppins', sans-serif;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -18,20 +17,24 @@ align-items:center;
 height:100vh;
 text-align:center;
 color:black;
-font-family:'Poppins', sans-serif;
 }
 
-/* Title */
-.title{
-font-size:72px;
+/* Titles */
+.title, .message{
+font-size:60px;
 font-weight:700;
-letter-spacing:4px;
-text-shadow:0 0 15px rgba(0,0,0,0.2);
+letter-spacing:3px;
+margin:20px;
 }
 
-/* Continue button */
+/* Subtext for Page 2 */
+.subtext{
+font-size:24px;
+margin:15px;
+}
+
+/* Buttons */
 button{
-margin-top:40px;
 padding:15px 35px;
 font-size:20px;
 background:black;
@@ -40,6 +43,8 @@ border:none;
 border-radius:12px;
 cursor:pointer;
 font-family:'Poppins', sans-serif;
+margin-top:20px;
+position:relative;
 }
 
 /* Floating hearts */
@@ -51,43 +56,63 @@ animation:float linear infinite;
 }
 
 @keyframes float{
-0%{
-transform:translateY(120vh);
-opacity:1;
+0%{ transform:translateY(120vh); opacity:1; }
+100%{ transform:translateY(-30vh); opacity:0; }
 }
-100%{
-transform:translateY(-30vh);
+
+/* Fade-in text */
+.fadeIn{
 opacity:0;
+animation:fadeIn 2s forwards;
 }
+
+@keyframes fadeIn{
+to{ opacity:1; }
 }
 </style>
 </head>
 
 <body>
 
-<h1 class="title">FOR SHYLHA</h1>
-<button onclick="nextPage()">Continue</button>
+<!-- Page 1 -->
+<div id="page1">
+<h1 class="title fadeIn">FOR SHYLH</h1>
+<button onclick="goToPage2()">Continue</button>
+</div>
+
+<!-- Page 2 -->
+<div id="page2" style="display:none; flex-direction:column; justify-content:center; align-items:center;">
+<h1 class="message fadeIn">Hi Shylah ❤️</h1>
+<p class="subtext fadeIn">This website is made just for you.<br>
+With all my heart, <br><strong>J DADDY</strong></p>
+
+<!-- Audio -->
+<audio id="loveSong" src="love_song.mp3"></audio>
+</div>
 
 <script>
-// Go to Page 2
-function nextPage(){
-window.location.href="page2.html";
-}
-
-// Floating hearts
+// Floating hearts function
 function createHeart(){
-const heart=document.createElement("div");
+const heart = document.createElement("div");
 heart.classList.add("heart");
-heart.innerHTML="❤";
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(Math.random()*30+15)+"px";
-heart.style.animationDuration=(Math.random()*2+2)+"s";
+heart.innerHTML = "❤";
+heart.style.left = Math.random()*100 + "vw";
+heart.style.fontSize = (Math.random()*30+15) + "px";
+heart.style.animationDuration = (Math.random()*2+2) + "s";
 document.body.appendChild(heart);
 setTimeout(()=>{heart.remove();},4000);
 }
-
 setInterval(createHeart,100);
 
+// Navigate to Page 2
+function goToPage2(){
+document.getElementById("page1").style.display="none";
+document.getElementById("page2").style.display="flex";
+
+// Play song automatically
+const audio = document.getElementById("loveSong");
+audio.play().catch(()=>console.log("Autoplay blocked"));
+}
 </script>
 
 </body>
